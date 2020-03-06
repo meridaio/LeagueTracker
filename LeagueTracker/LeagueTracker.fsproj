@@ -6,9 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="swagger.json" />
-    <Content Include="openapi.json" />
     <Compile Include="LeagueClient.fs" />
+    <Compile Include="EventProcessor.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

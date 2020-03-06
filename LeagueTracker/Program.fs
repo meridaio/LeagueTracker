@@ -1,51 +1,69 @@
 ﻿open System
 
+open EventProcessor
 open LeagueClient
 open System.Net.NetworkInformation
 
-let printWelcome (allInfo: AllJson.Root) =
+let printWelcome (allInfo: AllData) =
     printfn "Hello, %s! Welcome to League Tracker!" allInfo.ActivePlayer.SummonerName
-    printfn "Your current score is: %A" (Array.find (fun (x: AllJson.AllPlayer) -> x.SummonerName = allInfo.ActivePlayer.SummonerName) allInfo.AllPlayers).SummonerName
-    printfn "All events: %A" allInfo.Events.Events
 
-let rec loop (name: string) (callback: EventJson.Root -> Async<unit>) =
-    async {
-        let! events = getEvents ()
-        match events with
-        | Some e -> 
-            do! callback e
-            do! Async.Sleep 500
-            return! loop name callback
-        | None ->
-            return ()
-    }
+let loop (callback: Event list -> Async<unit>) : Async<unit> =
+    let rec loop' (prevState: Event list option) =
+        async {
+            let! events = getEvents ()
+            let processEvents e =
+                async {
+                    do! callback e
+                    do! Async.Sleep 500
+                    return! loop' events
+                }
 
-let rec waitForGame () = 
-    async {
-        let gameRunning = 
-            IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners()
-            |> Array.exists (fun x -> x.Port = 2999)
+            do! match events, prevState with
+                | Some e, Some p -> List.except p e |> processEvents
+                | Some e, None   -> e |> processEvents
+                | _              -> async { return () }
+        }
+    loop' None
 
-        if gameRunning then
-            printfn "Game started!"
-            return ()
-        else 
-            printfn "Game not started, waiting..."
-            do! Async.Sleep 1000
-            return! waitForGame ()
-    }
+let waitForApi () : Async<unit> =
+    printfn "Waiting for League API to become ready..."
+    let rec waitForApi' () =
+        async {
+            try
+                let! all = getAllStats ()
+                all.ActivePlayer.SummonerName |> ignore
+                printfn "API ready!"
+            with
+            | _ ->
+                do! Async.Sleep 1000
+                return! waitForApi' ()
+        }
+    waitForApi' ()
 
-let processEvents (events: EventJson.Root) =
-    async {
-        return printfn "Events: %A" events
-    }
+let waitForGame () : Async<unit> =
+    printfn "Waiting for game to start..."
+    let rec waitForGame' () =
+        async {
+            let gameRunning =
+                IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners()
+                |> Array.exists (fun x -> x.Port = 2999)
 
-let rec programLoop () =
+            if gameRunning then
+                printfn "Game started!"
+                return ()
+            else
+                do! Async.Sleep 5000
+                return! waitForGame' ()
+        }
+    waitForGame' ()
+
+let rec programLoop () : Async<unit> =
     async {
         do! waitForGame ()
+        do! waitForApi ()
         let! allInfo = getAllStats ()
         printWelcome allInfo
-        do! loop allInfo.ActivePlayer.SummonerName processEvents
+        do! processEvents allInfo.ActivePlayer.SummonerName |> loop
         return! programLoop ()
     }
 

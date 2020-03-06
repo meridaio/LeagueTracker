@@ -18,12 +18,15 @@ type ScoreJson = JsonProvider<"""
     "wardScore": 0.0
 }
 """>
+type Score = ScoreJson.Root
 
 type AllJson = JsonProvider<"https://static.developer.riotgames.com/docs/lol/liveclientdata_sample.json">
+type AllData = AllJson.Root
 
 type EventJson = JsonProvider<"https://static.developer.riotgames.com/docs/lol/liveclientdata_events.json">
+type Event = EventJson.Event
 
-let getAllStats () =
+let getAllStats () : Async<AllData> =
     async {
         let req = RestRequest "liveclientdata/allgamedata"
         let! res = Async.AwaitTask <| client.ExecuteAsync req
@@ -31,26 +34,29 @@ let getAllStats () =
         return AllJson.Parse content
     }
 
-let getPlayerName () =
+let getPlayerName () : Async<string> =
     async {
         let req = RestRequest "liveclientdata/activeplayername"
         let! res = Async.AwaitTask <| client.ExecuteAsync<string> req
         return res.Data
     }
 
-let getPlayerScore player =
+let getPlayerScore player : Async<Score> =
     async {
         let req = RestRequest("liveclientdata/playerscores").AddQueryParameter("summonerName", player)
         let! res = Async.AwaitTask <| client.ExecuteAsync req
         return ScoreJson.Parse res.Content
     }
 
-let getEvents () =
+let getEvents () : Async<Event list option> =
     async {
         try 
             let req = RestRequest "liveclientdata/eventdata"
             let! res = Async.AwaitTask <| client.ExecuteAsync req
-            return Some <| EventJson.Parse res.Content
+            return
+                (EventJson.Parse res.Content).Events
+                |> List.ofArray
+                |> Some
         with
         | _ -> return None
     }
