@@ -21,7 +21,7 @@ let loop (callback: Event list -> Async<unit>) : Async<unit> =
             do! match events, prevState with
                 | Some e, Some p -> List.except p e |> processEvents
                 | Some e, None   -> e |> processEvents
-                | _              -> async { return () }
+                | _              -> async { () }
         }
     loop' None
 
@@ -50,7 +50,6 @@ let waitForGame () : Async<unit> =
 
             if gameRunning then
                 printfn "Game started!"
-                return ()
             else
                 do! Async.Sleep 5000
                 return! waitForGame' ()
