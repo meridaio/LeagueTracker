@@ -60,7 +60,10 @@ let rec programLoop () : Async<unit> =
     async {
         do! waitForGame ()
         do! waitForApi ()
+        let currentTime = DateTime.Now
         let! allInfo = getAllStats ()
+        let startTime = currentTime.AddSeconds(-(float allInfo.GameData.GameTime))
+        printfn "Start time: %A" startTime
         printWelcome allInfo
         do! processEvents allInfo.ActivePlayer.SummonerName |> loop
         return! programLoop ()

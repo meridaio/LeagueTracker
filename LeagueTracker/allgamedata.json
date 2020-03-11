@@ -1,0 +1,1625 @@
+{
+	"activePlayer": {
+		"abilities": {
+			"E": {
+				"abilityLevel": 4,
+				"displayName": "Aegis Assault",
+				"id": "PantheonE",
+				"rawDescription": "GeneratedTip_Spell_PantheonE_Description",
+				"rawDisplayName": "GeneratedTip_Spell_PantheonE_DisplayName"
+			},
+			"Passive": {
+				"displayName": "Mortal Will",
+				"id": "PantheonPassive",
+				"rawDescription": "GeneratedTip_Passive_PantheonPassive_Description",
+				"rawDisplayName": "GeneratedTip_Passive_PantheonPassive_DisplayName"
+			},
+			"Q": {
+				"abilityLevel": 5,
+				"displayName": "Comet Spear",
+				"id": "PantheonQ",
+				"rawDescription": "GeneratedTip_Spell_PantheonQ_Description",
+				"rawDisplayName": "GeneratedTip_Spell_PantheonQ_DisplayName"
+			},
+			"R": {
+				"abilityLevel": 2,
+				"displayName": "Grand Starfall",
+				"id": "PantheonR",
+				"rawDescription": "GeneratedTip_Spell_PantheonR_Description",
+				"rawDisplayName": "GeneratedTip_Spell_PantheonR_DisplayName"
+			},
+			"W": {
+				"abilityLevel": 1,
+				"displayName": "Shield Vault",
+				"id": "PantheonW",
+				"rawDescription": "GeneratedTip_Spell_PantheonW_Description",
+				"rawDisplayName": "GeneratedTip_Spell_PantheonW_DisplayName"
+			}
+		},
+		"championStats": {
+			"abilityPower": 0.1,
+			"armor": 82.91874694824219,
+			"armorPenetrationFlat": 0.1,
+			"armorPenetrationPercent": 1.0,
+			"attackDamage": 177.2884979248047,
+			"attackRange": 175.0,
+			"attackSpeed": 0.8310352563858032,
+			"bonusArmorPenetrationPercent": 1.0,
+			"bonusMagicPenetrationPercent": 1.0,
+			"cooldownReduction": -0.10000000149011612,
+			"critChance": 0.1,
+			"critDamage": 200.0,
+			"currentHealth": 1865.2750244140626,
+			"healthRegenRate": 3.2798500061035158,
+			"lifeSteal": 0.1,
+			"magicLethality": 0.1,
+			"magicPenetrationFlat": 0.1,
+			"magicPenetrationPercent": 1.0,
+			"magicResist": 65.3062515258789,
+			"maxHealth": 1865.2750244140626,
+			"moveSpeed": 435.0,
+			"physicalLethality": 18.0,
+			"resourceMax": 772.3150024414063,
+			"resourceRegenRate": 2.3572499752044679,
+			"resourceType": "MANA",
+			"resourceValue": 772.3150024414063,
+			"spellVamp": 0.1,
+			"tenacity": 0.1
+		},
+		"currentGold": 2953.677978515625,
+		"fullRunes": {
+			"generalRunes": [
+				{
+					"displayName": "Conqueror",
+					"id": 8010,
+					"rawDescription": "perk_tooltip_Conqueror",
+					"rawDisplayName": "perk_displayname_Conqueror"
+				},
+				{
+					"displayName": "Triumph",
+					"id": 9111,
+					"rawDescription": "perk_tooltip_9111",
+					"rawDisplayName": "perk_displayname_9111"
+				},
+				{
+					"displayName": "Legend: Tenacity",
+					"id": 9105,
+					"rawDescription": "perk_tooltip_9105",
+					"rawDisplayName": "perk_displayname_9105"
+				},
+				{
+					"displayName": "Last Stand",
+					"id": 8299,
+					"rawDescription": "perk_tooltip_8234",
+					"rawDisplayName": "perk_displayname_8234"
+				},
+				{
+					"displayName": "Biscuit Delivery",
+					"id": 8345,
+					"rawDescription": "perk_tooltip_BiscuitDelivery",
+					"rawDisplayName": "perk_displayname_BiscuitDelivery"
+				},
+				{
+					"displayName": "Time Warp Tonic",
+					"id": 8352,
+					"rawDescription": "perk_tooltip_TimeWarpTonic",
+					"rawDisplayName": "perk_displayname_TimeWarpTonic"
+				}
+			],
+			"keystone": {
+				"displayName": "Conqueror",
+				"id": 8010,
+				"rawDescription": "perk_tooltip_Conqueror",
+				"rawDisplayName": "perk_displayname_Conqueror"
+			},
+			"primaryRuneTree": {
+				"displayName": "Precision",
+				"id": 8000,
+				"rawDescription": "perkstyle_tooltip_7201",
+				"rawDisplayName": "perkstyle_displayname_7201"
+			},
+			"secondaryRuneTree": {
+				"displayName": "Inspiration",
+				"id": 8300,
+				"rawDescription": "perkstyle_tooltip_7203",
+				"rawDisplayName": "perkstyle_displayname_7203"
+			},
+			"statRunes": [
+				{
+					"id": 5008,
+					"rawDescription": "perk_tooltip_StatModAdaptive"
+				},
+				{
+					"id": 5008,
+					"rawDescription": "perk_tooltip_StatModAdaptive"
+				},
+				{
+					"id": 5002,
+					"rawDescription": "perk_tooltip_StatModArmor"
+				}
+			]
+		},
+		"level": 12,
+		"summonerName": "Merida"
+	},
+	"allPlayers": [
+		{
+			"championName": "Pantheon",
+			"isBot": false,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Youmuu's Ghostblade",
+					"itemID": 3142,
+					"price": 700,
+					"rawDescription": "game_item_description_3142",
+					"rawDisplayName": "game_item_displayname_3142",
+					"slot": 0
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Corrupting Potion",
+					"itemID": 2033,
+					"price": 350,
+					"rawDescription": "game_item_description_2033",
+					"rawDisplayName": "game_item_displayname_2033",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Mercury's Treads",
+					"itemID": 3111,
+					"price": 350,
+					"rawDescription": "game_item_description_3111",
+					"rawDisplayName": "game_item_displayname_3111",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Phage",
+					"itemID": 3044,
+					"price": 500,
+					"rawDescription": "game_item_description_3044",
+					"rawDisplayName": "game_item_displayname_3044",
+					"slot": 3
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Ruby Crystal",
+					"itemID": 1028,
+					"price": 400,
+					"rawDescription": "game_item_description_1028",
+					"rawDisplayName": "game_item_displayname_1028",
+					"slot": 4
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 12,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Pantheon",
+			"rawSkinName": "game_character_skin_displayname_Pantheon_8",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Conqueror",
+					"id": 8010,
+					"rawDescription": "perk_tooltip_Conqueror",
+					"rawDisplayName": "perk_displayname_Conqueror"
+				},
+				"primaryRuneTree": {
+					"displayName": "Precision",
+					"id": 8000,
+					"rawDescription": "perkstyle_tooltip_7201",
+					"rawDisplayName": "perkstyle_displayname_7201"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Inspiration",
+					"id": 8300,
+					"rawDescription": "perkstyle_tooltip_7203",
+					"rawDisplayName": "perkstyle_displayname_7203"
+				}
+			},
+			"scores": {
+				"assists": 4,
+				"creepScore": 90,
+				"deaths": 1,
+				"kills": 12,
+				"wardScore": 1.125
+			},
+			"skinID": 8,
+			"skinName": "Baker Pantheon",
+			"summonerName": "Merida",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Flash",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Teleport",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerTeleport_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerTeleport_DisplayName"
+				}
+			},
+			"team": "ORDER"
+		},
+		{
+			"championName": "Cho'Gath",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Shield",
+					"itemID": 1054,
+					"price": 450,
+					"rawDescription": "game_item_description_1054",
+					"rawDisplayName": "game_item_displayname_1054",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Catalyst of Aeons",
+					"itemID": 3010,
+					"price": 350,
+					"rawDescription": "game_item_description_3010",
+					"rawDisplayName": "game_item_displayname_3010",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Glacial Shroud",
+					"itemID": 3024,
+					"price": 250,
+					"rawDescription": "game_item_description_3024",
+					"rawDisplayName": "game_item_displayname_3024",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Speed",
+					"itemID": 1001,
+					"price": 300,
+					"rawDescription": "game_item_description_1001",
+					"rawDisplayName": "game_item_displayname_1001",
+					"slot": 3
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Crystalline Bracer",
+					"itemID": 3801,
+					"price": 100,
+					"rawDescription": "game_item_description_3801",
+					"rawDisplayName": "game_item_displayname_3801",
+					"slot": 4
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 9,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Chogath",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Arcane Comet",
+					"id": 8229,
+					"rawDescription": "perk_tooltip_ArcaneComet",
+					"rawDisplayName": "perk_displayname_ArcaneComet"
+				},
+				"primaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Domination",
+					"id": 8100,
+					"rawDescription": "perkstyle_tooltip_7200",
+					"rawDisplayName": "perkstyle_displayname_7200"
+				}
+			},
+			"scores": {
+				"assists": 3,
+				"creepScore": 30,
+				"deaths": 3,
+				"kills": 2,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Cho'Gath Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Ignite",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Exhaust",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerExhaust_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerExhaust_DisplayName"
+				}
+			},
+			"team": "ORDER"
+		},
+		{
+			"championName": "Lux",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Ring",
+					"itemID": 1056,
+					"price": 400,
+					"rawDescription": "game_item_description_1056",
+					"rawDisplayName": "game_item_displayname_1056",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Speed",
+					"itemID": 1001,
+					"price": 300,
+					"rawDescription": "game_item_description_1001",
+					"rawDisplayName": "game_item_displayname_1001",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Lost Chapter",
+					"itemID": 3802,
+					"price": 80,
+					"rawDescription": "game_item_description_3802",
+					"rawDisplayName": "game_item_displayname_3802",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Ruby Crystal",
+					"itemID": 1028,
+					"price": 400,
+					"rawDescription": "game_item_description_1028",
+					"rawDisplayName": "game_item_displayname_1028",
+					"slot": 3
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Amplifying Tome",
+					"itemID": 1052,
+					"price": 435,
+					"rawDescription": "game_item_description_1052",
+					"rawDisplayName": "game_item_displayname_1052",
+					"slot": 4
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 8,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Lux",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Arcane Comet",
+					"id": 8229,
+					"rawDescription": "perk_tooltip_ArcaneComet",
+					"rawDisplayName": "perk_displayname_ArcaneComet"
+				},
+				"primaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Domination",
+					"id": 8100,
+					"rawDescription": "perkstyle_tooltip_7200",
+					"rawDisplayName": "perkstyle_displayname_7200"
+				}
+			},
+			"scores": {
+				"assists": 3,
+				"creepScore": 20,
+				"deaths": 1,
+				"kills": 1,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Lux Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Heal",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Exhaust",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerExhaust_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerExhaust_DisplayName"
+				}
+			},
+			"team": "ORDER"
+		},
+		{
+			"championName": "Shen",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Shield",
+					"itemID": 1054,
+					"price": 450,
+					"rawDescription": "game_item_description_1054",
+					"rawDisplayName": "game_item_displayname_1054",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Mercury's Treads",
+					"itemID": 3111,
+					"price": 350,
+					"rawDescription": "game_item_description_3111",
+					"rawDisplayName": "game_item_displayname_3111",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Bami's Cinder",
+					"itemID": 3751,
+					"price": 500,
+					"rawDescription": "game_item_description_3751",
+					"rawDisplayName": "game_item_displayname_3751",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Chain Vest",
+					"itemID": 1031,
+					"price": 500,
+					"rawDescription": "game_item_description_1031",
+					"rawDisplayName": "game_item_displayname_1031",
+					"slot": 3
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Ruby Crystal",
+					"itemID": 1028,
+					"price": 400,
+					"rawDescription": "game_item_description_1028",
+					"rawDisplayName": "game_item_displayname_1028",
+					"slot": 4
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 8,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Shen",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Grasp of the Undying",
+					"id": 8437,
+					"rawDescription": "perk_tooltip_GraspOfTheUndying",
+					"rawDisplayName": "perk_displayname_GraspOfTheUndying"
+				},
+				"primaryRuneTree": {
+					"displayName": "Resolve",
+					"id": 8400,
+					"rawDescription": "perkstyle_tooltip_7204",
+					"rawDisplayName": "perkstyle_displayname_7204"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				}
+			},
+			"scores": {
+				"assists": 2,
+				"creepScore": 30,
+				"deaths": 1,
+				"kills": 3,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Shen Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Heal",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Ghost",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+				}
+			},
+			"team": "ORDER"
+		},
+		{
+			"championName": "Caitlyn",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Blade",
+					"itemID": 1055,
+					"price": 450,
+					"rawDescription": "game_item_description_1055",
+					"rawDisplayName": "game_item_displayname_1055",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "B. F. Sword",
+					"itemID": 1038,
+					"price": 1300,
+					"rawDescription": "game_item_description_1038",
+					"rawDisplayName": "game_item_displayname_1038",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Kircheis Shard",
+					"itemID": 2015,
+					"price": 400,
+					"rawDescription": "game_item_description_2015",
+					"rawDisplayName": "game_item_displayname_2015",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Speed",
+					"itemID": 1001,
+					"price": 300,
+					"rawDescription": "game_item_description_1001",
+					"rawDisplayName": "game_item_displayname_1001",
+					"slot": 3
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 7,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Caitlyn",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Press the Attack",
+					"id": 8005,
+					"rawDescription": "perk_tooltip_PressTheAttack",
+					"rawDisplayName": "perk_displayname_PressTheAttack"
+				},
+				"primaryRuneTree": {
+					"displayName": "Precision",
+					"id": 8000,
+					"rawDescription": "perkstyle_tooltip_7201",
+					"rawDisplayName": "perkstyle_displayname_7201"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				}
+			},
+			"scores": {
+				"assists": 1,
+				"creepScore": 30,
+				"deaths": 0,
+				"kills": 2,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Caitlyn Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Ignite",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Exhaust",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerExhaust_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerExhaust_DisplayName"
+				}
+			},
+			"team": "ORDER"
+		},
+		{
+			"championName": "Warwick",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Shield",
+					"itemID": 1054,
+					"price": 450,
+					"rawDescription": "game_item_description_1054",
+					"rawDisplayName": "game_item_displayname_1054",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Speed",
+					"itemID": 1001,
+					"price": 300,
+					"rawDescription": "game_item_description_1001",
+					"rawDisplayName": "game_item_displayname_1001",
+					"slot": 1
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Tiamat",
+					"itemID": 3077,
+					"price": 475,
+					"rawDescription": "game_item_description_3077",
+					"rawDisplayName": "game_item_displayname_3077",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Sapphire Crystal",
+					"itemID": 1027,
+					"price": 350,
+					"rawDescription": "game_item_description_1027",
+					"rawDisplayName": "game_item_displayname_1027",
+					"slot": 3
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 8,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Warwick",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Press the Attack",
+					"id": 8005,
+					"rawDescription": "perk_tooltip_PressTheAttack",
+					"rawDisplayName": "perk_displayname_PressTheAttack"
+				},
+				"primaryRuneTree": {
+					"displayName": "Precision",
+					"id": 8000,
+					"rawDescription": "perkstyle_tooltip_7201",
+					"rawDisplayName": "perkstyle_displayname_7201"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				}
+			},
+			"scores": {
+				"assists": 0,
+				"creepScore": 30,
+				"deaths": 5,
+				"kills": 3,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Warwick Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Teleport",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerTeleport_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerTeleport_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Ghost",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+				}
+			},
+			"team": "CHAOS"
+		},
+		{
+			"championName": "Amumu",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Shield",
+					"itemID": 1054,
+					"price": 450,
+					"rawDescription": "game_item_description_1054",
+					"rawDisplayName": "game_item_displayname_1054",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Speed",
+					"itemID": 1001,
+					"price": 300,
+					"rawDescription": "game_item_description_1001",
+					"rawDisplayName": "game_item_displayname_1001",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Bami's Cinder",
+					"itemID": 3751,
+					"price": 500,
+					"rawDescription": "game_item_description_3751",
+					"rawDisplayName": "game_item_displayname_3751",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Spectre's Cowl",
+					"itemID": 3211,
+					"price": 350,
+					"rawDescription": "game_item_description_3211",
+					"rawDisplayName": "game_item_displayname_3211",
+					"slot": 3
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Null-Magic Mantle",
+					"itemID": 1033,
+					"price": 450,
+					"rawDescription": "game_item_description_1033",
+					"rawDisplayName": "game_item_displayname_1033",
+					"slot": 4
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 8,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Amumu",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Grasp of the Undying",
+					"id": 8437,
+					"rawDescription": "perk_tooltip_GraspOfTheUndying",
+					"rawDisplayName": "perk_displayname_GraspOfTheUndying"
+				},
+				"primaryRuneTree": {
+					"displayName": "Resolve",
+					"id": 8400,
+					"rawDescription": "perkstyle_tooltip_7204",
+					"rawDisplayName": "perkstyle_displayname_7204"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				}
+			},
+			"scores": {
+				"assists": 0,
+				"creepScore": 30,
+				"deaths": 3,
+				"kills": 1,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Amumu Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Ghost",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Teleport",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerTeleport_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerTeleport_DisplayName"
+				}
+			},
+			"team": "CHAOS"
+		},
+		{
+			"championName": "Rammus",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Shield",
+					"itemID": 1054,
+					"price": 450,
+					"rawDescription": "game_item_description_1054",
+					"rawDisplayName": "game_item_displayname_1054",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Swiftness",
+					"itemID": 3009,
+					"price": 600,
+					"rawDescription": "game_item_description_3009",
+					"rawDisplayName": "game_item_displayname_3009",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Sunfire Cape",
+					"itemID": 3068,
+					"price": 650,
+					"rawDescription": "game_item_description_3068",
+					"rawDisplayName": "game_item_displayname_3068",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Cloth Armor",
+					"itemID": 1029,
+					"price": 300,
+					"rawDescription": "game_item_description_1029",
+					"rawDisplayName": "game_item_displayname_1029",
+					"slot": 3
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 10,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Rammus",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Grasp of the Undying",
+					"id": 8437,
+					"rawDescription": "perk_tooltip_GraspOfTheUndying",
+					"rawDisplayName": "perk_displayname_GraspOfTheUndying"
+				},
+				"primaryRuneTree": {
+					"displayName": "Resolve",
+					"id": 8400,
+					"rawDescription": "perkstyle_tooltip_7204",
+					"rawDisplayName": "perkstyle_displayname_7204"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				}
+			},
+			"scores": {
+				"assists": 0,
+				"creepScore": 40,
+				"deaths": 7,
+				"kills": 2,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Rammus Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Heal",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Cleanse",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerBoost_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerBoost_DisplayName"
+				}
+			},
+			"team": "CHAOS"
+		},
+		{
+			"championName": "Vladimir",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Doran's Shield",
+					"itemID": 1054,
+					"price": 450,
+					"rawDescription": "game_item_description_1054",
+					"rawDisplayName": "game_item_displayname_1054",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Speed",
+					"itemID": 1001,
+					"price": 300,
+					"rawDescription": "game_item_description_1001",
+					"rawDisplayName": "game_item_displayname_1001",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Fiendish Codex",
+					"itemID": 3108,
+					"price": 465,
+					"rawDescription": "game_item_description_3108",
+					"rawDisplayName": "game_item_displayname_3108",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Ruby Crystal",
+					"itemID": 1028,
+					"price": 400,
+					"rawDescription": "game_item_description_1028",
+					"rawDisplayName": "game_item_displayname_1028",
+					"slot": 3
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 9,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Vladimir",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Arcane Comet",
+					"id": 8229,
+					"rawDescription": "perk_tooltip_ArcaneComet",
+					"rawDisplayName": "perk_displayname_ArcaneComet"
+				},
+				"primaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Domination",
+					"id": 8100,
+					"rawDescription": "perkstyle_tooltip_7200",
+					"rawDisplayName": "perkstyle_displayname_7200"
+				}
+			},
+			"scores": {
+				"assists": 3,
+				"creepScore": 20,
+				"deaths": 2,
+				"kills": 0,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Vladimir Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Ignite",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Exhaust",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerExhaust_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerExhaust_DisplayName"
+				}
+			},
+			"team": "CHAOS"
+		},
+		{
+			"championName": "Soraka",
+			"isBot": true,
+			"isDead": false,
+			"items": [
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Frostfang",
+					"itemID": 3851,
+					"price": 400,
+					"rawDescription": "game_item_description_3851",
+					"rawDisplayName": "game_item_displayname_3851",
+					"slot": 0
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Boots of Speed",
+					"itemID": 1001,
+					"price": 300,
+					"rawDescription": "game_item_description_1001",
+					"rawDisplayName": "game_item_displayname_1001",
+					"slot": 1
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Forbidden Idol",
+					"itemID": 3114,
+					"price": 550,
+					"rawDescription": "game_item_description_3114",
+					"rawDisplayName": "game_item_displayname_3114",
+					"slot": 2
+				},
+				{
+					"canUse": false,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Chalice of Harmony",
+					"itemID": 3028,
+					"price": 100,
+					"rawDescription": "game_item_description_3028",
+					"rawDisplayName": "game_item_displayname_3028",
+					"slot": 3
+				},
+				{
+					"canUse": true,
+					"consumable": false,
+					"count": 1,
+					"displayName": "Warding Totem (Trinket)",
+					"itemID": 3340,
+					"price": 0,
+					"rawDescription": "game_item_description_3340",
+					"rawDisplayName": "game_item_displayname_3340",
+					"slot": 6
+				}
+			],
+			"level": 8,
+			"position": "",
+			"rawChampionName": "game_character_displayname_Soraka",
+			"respawnTimer": 0.1,
+			"runes": {
+				"keystone": {
+					"displayName": "Arcane Comet",
+					"id": 8229,
+					"rawDescription": "perk_tooltip_ArcaneComet",
+					"rawDisplayName": "perk_displayname_ArcaneComet"
+				},
+				"primaryRuneTree": {
+					"displayName": "Sorcery",
+					"id": 8200,
+					"rawDescription": "perkstyle_tooltip_7202",
+					"rawDisplayName": "perkstyle_displayname_7202"
+				},
+				"secondaryRuneTree": {
+					"displayName": "Domination",
+					"id": 8100,
+					"rawDescription": "perkstyle_tooltip_7200",
+					"rawDisplayName": "perkstyle_displayname_7200"
+				}
+			},
+			"scores": {
+				"assists": 1,
+				"creepScore": 10,
+				"deaths": 3,
+				"kills": 0,
+				"wardScore": 0.1
+			},
+			"skinID": 0,
+			"summonerName": "Soraka Bot",
+			"summonerSpells": {
+				"summonerSpellOne": {
+					"displayName": "Heal",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+				},
+				"summonerSpellTwo": {
+					"displayName": "Ghost",
+					"rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+					"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+				}
+			},
+			"team": "CHAOS"
+		}
+	],
+	"events": {
+		"Events": [
+			{
+				"EventID": 0,
+				"EventName": "GameStart",
+				"EventTime": 0.02278590016067028
+			},
+			{
+				"EventID": 1,
+				"EventName": "MinionsSpawning",
+				"EventTime": 65.0416259765625
+			},
+			{
+				"Assisters": [],
+				"EventID": 2,
+				"EventName": "ChampionKill",
+				"EventTime": 165.3140411376953,
+				"KillerName": "Merida",
+				"VictimName": "Rammus Bot"
+			},
+			{
+				"EventID": 3,
+				"EventName": "FirstBlood",
+				"EventTime": 165.3140411376953,
+				"Recipient": "Merida"
+			},
+			{
+				"Assisters": [
+					"Lux Bot"
+				],
+				"EventID": 4,
+				"EventName": "ChampionKill",
+				"EventTime": 168.65042114257813,
+				"KillerName": "Caitlyn Bot",
+				"VictimName": "Amumu Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 5,
+				"EventName": "ChampionKill",
+				"EventTime": 273.62078857421877,
+				"KillerName": "Merida",
+				"VictimName": "Rammus Bot"
+			},
+			{
+				"Assisters": [
+					"Vladimir Bot"
+				],
+				"EventID": 6,
+				"EventName": "ChampionKill",
+				"EventTime": 289.20867919921877,
+				"KillerName": "Warwick Bot",
+				"VictimName": "Cho'Gath Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 7,
+				"EventName": "ChampionKill",
+				"EventTime": 318.8479309082031,
+				"KillerName": "Merida",
+				"VictimName": "Rammus Bot"
+			},
+			{
+				"Assisters": [
+					"Merida",
+					"Cho'Gath Bot"
+				],
+				"EventID": 8,
+				"EventName": "ChampionKill",
+				"EventTime": 363.0069580078125,
+				"KillerName": "Shen Bot",
+				"VictimName": "Vladimir Bot"
+			},
+			{
+				"Assisters": [
+					"Merida"
+				],
+				"EventID": 9,
+				"EventName": "ChampionKill",
+				"EventTime": 368.0624084472656,
+				"KillerName": "Cho'Gath Bot",
+				"VictimName": "Warwick Bot"
+			},
+			{
+				"Assisters": [
+					"Lux Bot"
+				],
+				"EventID": 10,
+				"EventName": "ChampionKill",
+				"EventTime": 382.92919921875,
+				"KillerName": "Caitlyn Bot",
+				"VictimName": "Amumu Bot"
+			},
+			{
+				"Assisters": [
+					"Merida",
+					"Cho'Gath Bot"
+				],
+				"EventID": 11,
+				"EventName": "ChampionKill",
+				"EventTime": 421.3022766113281,
+				"KillerName": "Shen Bot",
+				"VictimName": "Warwick Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 12,
+				"EventName": "ChampionKill",
+				"EventTime": 455.57135009765627,
+				"KillerName": "Merida",
+				"VictimName": "Rammus Bot"
+			},
+			{
+				"Assisters": [
+					"Vladimir Bot"
+				],
+				"EventID": 13,
+				"EventName": "ChampionKill",
+				"EventTime": 521.3598022460938,
+				"KillerName": "Warwick Bot",
+				"VictimName": "Cho'Gath Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 14,
+				"EventName": "ChampionKill",
+				"EventTime": 529.7155151367188,
+				"KillerName": "Merida",
+				"VictimName": "Rammus Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 15,
+				"EventName": "ChampionKill",
+				"EventTime": 552.9605102539063,
+				"KillerName": "Merida",
+				"VictimName": "Soraka Bot"
+			},
+			{
+				"Assisters": [
+					"Lux Bot"
+				],
+				"EventID": 16,
+				"EventName": "ChampionKill",
+				"EventTime": 558.1934814453125,
+				"KillerName": "Merida",
+				"VictimName": "Amumu Bot"
+			},
+			{
+				"EventID": 17,
+				"EventName": "Multikill",
+				"EventTime": 558.1934814453125,
+				"KillStreak": 2,
+				"KillerName": "Merida"
+			},
+			{
+				"Assisters": [],
+				"EventID": 18,
+				"EventName": "ChampionKill",
+				"EventTime": 572.356201171875,
+				"KillerName": "Cho'Gath Bot",
+				"VictimName": "Warwick Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 19,
+				"EventName": "HeraldKill",
+				"EventTime": 600.1474609375,
+				"KillerName": "Merida",
+				"Stolen": "False"
+			},
+			{
+				"Assisters": [
+					"Shen Bot"
+				],
+				"EventID": 20,
+				"EventName": "ChampionKill",
+				"EventTime": 626.849365234375,
+				"KillerName": "Merida",
+				"VictimName": "Rammus Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 21,
+				"EventName": "ChampionKill",
+				"EventTime": 653.8102416992188,
+				"KillerName": "Merida",
+				"VictimName": "Warwick Bot"
+			},
+			{
+				"Assisters": [
+					"Cho'Gath Bot"
+				],
+				"EventID": 22,
+				"EventName": "TurretKilled",
+				"EventTime": 675.5819702148438,
+				"KillerName": "Merida",
+				"TurretKilled": "Turret_T2_R_03_A"
+			},
+			{
+				"EventID": 23,
+				"EventName": "FirstBrick",
+				"EventTime": 675.5819702148438,
+				"KillerName": "Merida"
+			},
+			{
+				"Assisters": [
+					"Caitlyn Bot"
+				],
+				"EventID": 24,
+				"EventName": "ChampionKill",
+				"EventTime": 715.3331909179688,
+				"KillerName": "Lux Bot",
+				"VictimName": "Soraka Bot"
+			},
+			{
+				"Assisters": [],
+				"DragonType": "Water",
+				"EventID": 25,
+				"EventName": "DragonKill",
+				"EventTime": 732.478759765625,
+				"KillerName": "Merida",
+				"Stolen": "False"
+			},
+			{
+				"Assisters": [
+					"Merida"
+				],
+				"EventID": 26,
+				"EventName": "ChampionKill",
+				"EventTime": 756.3167724609375,
+				"KillerName": "Shen Bot",
+				"VictimName": "Warwick Bot"
+			},
+			{
+				"Assisters": [
+					"Cho'Gath Bot",
+					"Shen Bot"
+				],
+				"EventID": 27,
+				"EventName": "ChampionKill",
+				"EventTime": 760.9981689453125,
+				"KillerName": "Merida",
+				"VictimName": "Vladimir Bot"
+			},
+			{
+				"Assisters": [
+					"Soraka Bot"
+				],
+				"EventID": 28,
+				"EventName": "ChampionKill",
+				"EventTime": 773.7894897460938,
+				"KillerName": "Amumu Bot",
+				"VictimName": "Lux Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 29,
+				"EventName": "ChampionKill",
+				"EventTime": 793.1307983398438,
+				"KillerName": "Merida",
+				"VictimName": "Rammus Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 30,
+				"EventName": "ChampionKill",
+				"EventTime": 832.76708984375,
+				"KillerName": "Merida",
+				"VictimName": "Soraka Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 31,
+				"EventName": "ChampionKill",
+				"EventTime": 849.7088623046875,
+				"KillerName": "Rammus Bot",
+				"VictimName": "Shen Bot"
+			},
+			{
+				"Assisters": [],
+				"EventID": 32,
+				"EventName": "TurretKilled",
+				"EventTime": 852.5145874023438,
+				"KillerName": "Minion_T100L1S26N0159",
+				"TurretKilled": "Turret_T2_C_05_A"
+			},
+			{
+				"Assisters": [],
+				"EventID": 33,
+				"EventName": "ChampionKill",
+				"EventTime": 855.2571411132813,
+				"KillerName": "Rammus Bot",
+				"VictimName": "Merida"
+			},
+			{
+				"EventID": 34,
+				"EventName": "Multikill",
+				"EventTime": 855.2571411132813,
+				"KillStreak": 2,
+				"KillerName": "Rammus Bot"
+			},
+			{
+				"Assisters": [
+					"Vladimir Bot"
+				],
+				"EventID": 35,
+				"EventName": "ChampionKill",
+				"EventTime": 863.9561157226563,
+				"KillerName": "Warwick Bot",
+				"VictimName": "Cho'Gath Bot"
+			},
+			{
+				"Assisters": [
+					"Lux Bot"
+				],
+				"EventID": 36,
+				"EventName": "TurretKilled",
+				"EventTime": 901.998291015625,
+				"KillerName": "Caitlyn Bot",
+				"TurretKilled": "Turret_T2_L_03_A"
+			},
+			{
+				"Assisters": [
+					"Rammus Bot"
+				],
+				"EventID": 37,
+				"EventName": "TurretKilled",
+				"EventTime": 924.3529052734375,
+				"KillerName": "Soraka Bot",
+				"TurretKilled": "Turret_T1_C_05_A"
+			}
+		]
+	},
+	"gameData": {
+		"gameMode": "CLASSIC",
+		"gameTime": 925.7284545898438,
+		"mapName": "Map11",
+		"mapNumber": 11,
+		"mapTerrain": "Default"
+	}
+}

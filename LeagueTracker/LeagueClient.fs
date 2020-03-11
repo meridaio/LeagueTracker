@@ -20,7 +20,9 @@ type ScoreJson = JsonProvider<"""
 """>
 type Score = ScoreJson.Root
 
-type AllJson = JsonProvider<"https://static.developer.riotgames.com/docs/lol/liveclientdata_sample.json">
+[<Literal>]
+let source = __SOURCE_DIRECTORY__ + "/allgamedata.json"
+type AllJson = JsonProvider<source>
 type AllData = AllJson.Root
 
 type EventJson = JsonProvider<"https://static.developer.riotgames.com/docs/lol/liveclientdata_events.json">

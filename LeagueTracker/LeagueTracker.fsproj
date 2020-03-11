@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="allgamedata.json" />
     <Compile Include="LeagueClient.fs" />
     <Compile Include="EventProcessor.fs" />
     <Compile Include="Program.fs" />

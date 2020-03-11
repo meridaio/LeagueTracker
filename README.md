@@ -1,5 +1,7 @@
 # League Tracker
 
+This program is a native application to track League of Legends data in real time (using the Live Client Data API) and provide notifications to other services. The goal of this project is to be the backbone for future realtime data applications, including an LED light controller and a GUI application to view live stats and track past game history.
+
 ## License
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
