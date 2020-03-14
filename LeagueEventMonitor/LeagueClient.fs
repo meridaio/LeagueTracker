@@ -1,4 +1,4 @@
-﻿module LeagueClient
+﻿module internal LeagueClient
 
 open RestSharp
 open FSharp.Data
@@ -21,12 +21,13 @@ type ScoreJson = JsonProvider<"""
 type Score = ScoreJson.Root
 
 [<Literal>]
-let source = __SOURCE_DIRECTORY__ + "/allgamedata.json"
-type AllJson = JsonProvider<source>
+let allSource = __SOURCE_DIRECTORY__ + "/Data/allgamedata.json"
+type AllJson = JsonProvider<allSource>
 type AllData = AllJson.Root
 
-type EventJson = JsonProvider<"https://static.developer.riotgames.com/docs/lol/liveclientdata_events.json">
-type Event = EventJson.Event
+[<Literal>]
+let eventSource = __SOURCE_DIRECTORY__ + "/Data/events.json"
+type EventJson = JsonProvider<eventSource>
 
 let getAllStats () : Async<AllData> =
     async {
@@ -50,7 +51,20 @@ let getPlayerScore player : Async<Score> =
         return ScoreJson.Parse res.Content
     }
 
-let getEvents () : Async<Event list option> =
+let getNextEvents (id: int) : Async<EventJson.Event list option> =
+    async {
+        try
+            let req = RestRequest("liveclientdata/eventdata").AddQueryParameter("eventID", id.ToString())
+            let! res = Async.AwaitTask <| client.ExecuteAsync req
+            return
+                (EventJson.Parse res.Content).Events
+                |> List.ofArray
+                |> Some
+        with
+        | _ -> return None
+    }
+
+let getEvents () : Async<EventJson.Event list option> =
     async {
         try 
             let req = RestRequest "liveclientdata/eventdata"
