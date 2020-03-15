@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Client\Events.fs" />
+    <Compile Include="Client\Score.fs" />
+    <Compile Include="Client\JsonTypes.fs" />
+    <Compile Include="Client\LeagueClient.fs" />
     <Content Include="Data\events.json" />
     <Content Include="Data\allgamedata.json" />
-    <Compile Include="LeagueClient.fs" />
-    <Compile Include="Events.fs" />
-    <Compile Include="TypedClient.fs" />
     <Compile Include="EventHandler.fs" />
     <Compile Include="EventProcessor.fs" />
     <Compile Include="EventMonitor.fs" />

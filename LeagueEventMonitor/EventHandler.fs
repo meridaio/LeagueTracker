@@ -1,6 +1,6 @@
 ﻿module EventHandler
 
-open Events
+open LeagueEventMonitor.Client.Events
 
 type EventContext = {
     SummonerName: string

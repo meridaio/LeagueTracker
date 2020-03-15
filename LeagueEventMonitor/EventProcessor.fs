@@ -1,6 +1,6 @@
 ﻿module EventProcessor
 
-open Events
+open LeagueEventMonitor.Client.Events
 open EventHandler
 
 let processEvent (handler: EventHandler) (e: Event) : Async<unit> =

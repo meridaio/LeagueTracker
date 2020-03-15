@@ -2,53 +2,60 @@
 
 open System
 
-open Events
+open LeagueEventMonitor.Client.Events
 open EventProcessor
 open EventHandler
-open LeagueClient
+open LeagueEventMonitor.Client.LeagueClient
 open System.Net.NetworkInformation
 
 let printWelcome (allInfo: AllData) =
     printfn "Hello, %s! Welcome to League Tracker!" allInfo.ActivePlayer.SummonerName
 
-open TypedClient
-let loop (callback: Event list -> Async<unit>) : Async<unit> =
-    let rec loop' (totalEvents: Event list option) =
+[<Literal>]
+let eventPollTimeoutMs = 500
+
+[<Literal>]
+let readyPollTimeoutMs = 1000
+
+[<Literal>]
+let gamePollTimeoutMs = 5000
+
+let getNextEventId (events: Event list) : int =
+    let getEventId = function
+        | GameStart c -> c.Data.EventID
+        | MinionsSpawning c -> c.Data.EventID
+        | FirstBrick c -> c.Data.EventID
+        | TurretKilled c -> c.Data.EventID
+        | InhibKilled c -> c.Data.EventID
+        | DragonKill c -> c.Data.EventID
+        | HeraldKill c -> c.Data.EventID
+        | BaronKill c -> c.Data.EventID
+        | ChampionKill c -> c.Data.EventID
+        | Multikill c -> c.Data.EventID
+        | Ace c -> c.Data.EventID
+
+    match events with
+    | [] -> 0
+    | events -> events |> List.map (getEventId >> ((+) 1)) |> List.max
+
+
+let loop (startingId: int) (callback: Event list -> Async<unit>) : Async<unit> =
+    let rec loop' (lastId: int) =
         async {
-            let! events = getEvents ()
-            let processEvents e =
-                async {
-                    do! callback e
-                    do! Async.Sleep 500
-                    return! loop' events
-                }
-  
-            do! match events, totalEvents with
-                | Some e, Some p -> List.except p e |> processEvents
-                | Some e, None   -> e |> processEvents
-                | _              -> async { () }
-            
-            (*let! events =
-                match totalEvents with
-                | Some p ->
-                    p |> List.map (fun x -> x.EventId) |> List.max |> (+) 1 |> getNextEvents
-                | None ->
-                    getEvents ()
+            let! events = getNextEvents lastId
                 
-            match events, totalEvents with
-            | Some e, Some t ->
-                do! List.map parseEvent e |> callback
-                do! Async.Sleep 500
-                return! loop' <| Some (t @ e)
-            | Some e, None ->
+            match events with
+            | Some [] ->
+                do! Async.Sleep eventPollTimeoutMs
+                return! loop' lastId
+            | Some e ->
                 do! callback e
-                do! Async.Sleep 500
-                return! loop' events
+                do! Async.Sleep eventPollTimeoutMs
+                return! loop' <| getNextEventId e
             | _ ->
                 return ()
-            *)
         }
-    loop' None
+    loop' startingId
 
 let waitForApi () : Async<unit> =
     printfn "Waiting for League API to become ready..."
@@ -56,11 +63,11 @@ let waitForApi () : Async<unit> =
         async {
             try
                 let! all = getAllStats ()
-                all.ActivePlayer.SummonerName |> ignore
+                all |> Option.map (fun a -> a.ActivePlayer.SummonerName) |> ignore
                 printfn "API ready!"
             with
             | _ ->
-                do! Async.Sleep 1000
+                do! Async.Sleep readyPollTimeoutMs
                 return! waitForApi' ()
         }
     waitForApi' ()
@@ -76,7 +83,7 @@ let waitForGame () : Async<unit> =
             if gameRunning then
                 printfn "Game started!"
             else
-                do! Async.Sleep 5000
+                do! Async.Sleep gamePollTimeoutMs
                 return! waitForGame' ()
         }
     waitForGame' ()
@@ -87,12 +94,19 @@ let rec programLoop (mkHandler: EventContext -> EventHandler) : Async<unit> =
         do! waitForApi ()
         let currentTime = DateTime.Now
         let! allInfo = getAllStats ()
-        let startTime = currentTime.AddSeconds(-(float allInfo.GameData.GameTime))
-        printfn "Start time: %A" startTime
-        printWelcome allInfo
-        let handler = mkHandler {
-            SummonerName = allInfo.ActivePlayer.SummonerName
-        }
-        do! processEvents handler |> loop
-        return! programLoop mkHandler
+        match allInfo with
+        | Some allInfo ->
+            let startTime = currentTime.AddSeconds(-(float allInfo.GameData.GameTime))
+            printfn "Start time: %A" startTime
+            printWelcome allInfo
+            let handler = mkHandler {
+                SummonerName = allInfo.ActivePlayer.SummonerName
+            }
+
+            let! events = getEvents ()
+            let nextEventId = events |> Option.map getNextEventId |> Option.defaultValue 0
+            do! processEvents handler |> loop nextEventId
+            return! programLoop mkHandler
+        | None ->
+            failwith "An error occurred getting stats, aborting"
     }

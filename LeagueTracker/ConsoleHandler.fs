@@ -1,7 +1,7 @@
 ﻿module ConsoleHandler
 
 open EventHandler
-open Events
+open LeagueEventMonitor.Client.Events
 
 type ConsoleHandler (ctx: EventContext) =
     inherit EventHandler (ctx)
