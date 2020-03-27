@@ -7,6 +7,8 @@ open EventProcessor
 open EventHandler
 open LeagueEventMonitor.Client.LeagueClient
 open System.Net.NetworkInformation
+open FSharpPlus
+open FSharpPlus.Data
 
 let printWelcome (allInfo: AllData) =
     printfn "Hello, %s! Welcome to League Tracker!" allInfo.ActivePlayer.SummonerName
@@ -88,8 +90,8 @@ let waitForGame () : Async<unit> =
         }
     waitForGame' ()
 
-let rec programLoop (mkHandler: EventContext -> EventHandler) : Async<unit> =
-    async {
+let rec programLoop (mkHandler: EventContext -> EventHandler) =
+    monad {
         do! waitForGame ()
         do! waitForApi ()
         let currentTime = DateTime.Now

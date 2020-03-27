@@ -173,3 +173,15 @@ let getEvents () : Async<Event list option> =
         | _ -> return None
     }
 
+let getPlayerList () =
+    async {
+        try
+            let req = RestRequest "liveclientdata/playerlist"
+            let! res = Async.AwaitTask <| client.ExecuteAsync req
+            return
+                (PlayerListJson.Parse res.Content)
+                |> Some
+        with
+        | _ -> return None
+    }
+

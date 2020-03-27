@@ -1,0 +1,68 @@
+[
+	{
+		"championName": "Fiddlesticks",
+		"isBot": false,
+		"isDead": false,
+		"items": [
+			{
+				"canUse": true,
+				"consumable": true,
+				"count": 1,
+				"displayName": "Total Biscuit of Everlasting Will",
+				"itemID": 2010,
+				"price": 75,
+				"rawDescription": "game_item_description_2010",
+				"rawDisplayName": "game_item_displayname_2010",
+				"slot": 0
+			}
+		],
+		"level": 1,
+		"position": "",
+		"rawChampionName": "game_character_displayname_FiddleSticks",
+		"rawSkinName": "game_character_skin_displayname_FiddleSticks_5",
+		"respawnTimer": 0.1,
+		"runes": {
+			"keystone": {
+				"displayName": "Aftershock",
+				"id": 8439,
+				"rawDescription": "perk_tooltip_VeteranAftershock",
+				"rawDisplayName": "perk_displayname_VeteranAftershock"
+			},
+			"primaryRuneTree": {
+				"displayName": "Resolve",
+				"id": 8400,
+				"rawDescription": "perkstyle_tooltip_7204",
+				"rawDisplayName": "perkstyle_displayname_7204"
+			},
+			"secondaryRuneTree": {
+				"displayName": "Inspiration",
+				"id": 8300,
+				"rawDescription": "perkstyle_tooltip_7203",
+				"rawDisplayName": "perkstyle_displayname_7203"
+			}
+		},
+		"scores": {
+			"assists": 0,
+			"creepScore": 0,
+			"deaths": 0,
+			"kills": 0,
+			"wardScore": 0.0
+		},
+		"skinID": 5,
+		"skinName": "Fiddle Me Timbers",
+		"summonerName": "Merida",
+		"summonerSpells": {
+			"summonerSpellOne": {
+				"displayName": "Flash",
+				"rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+				"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+			},
+			"summonerSpellTwo": {
+				"displayName": "Teleport",
+				"rawDescription": "GeneratedTip_SummonerSpell_SummonerTeleport_Description",
+				"rawDisplayName": "GeneratedTip_SummonerSpell_SummonerTeleport_DisplayName"
+			}
+		},
+		"team": "ORDER"
+	}
+]

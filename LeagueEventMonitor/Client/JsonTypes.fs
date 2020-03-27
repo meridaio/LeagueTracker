@@ -19,3 +19,7 @@ type AllJson = JsonProvider<allSource>
 [<Literal>]
 let eventSource = __SOURCE_DIRECTORY__ + "/../Data/events.json"
 type EventJson = JsonProvider<eventSource>
+
+[<Literal>]
+let playerlistSource = __SOURCE_DIRECTORY__ + "/../Data/playerlist.json"
+type PlayerListJson = JsonProvider<playerlistSource>
