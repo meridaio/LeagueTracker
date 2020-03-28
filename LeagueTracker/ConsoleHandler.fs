@@ -2,11 +2,11 @@
 
 open System.Drawing
 open EventHandler
-open MagicHome
+open LEDManager
 open LeagueEventMonitor.Client.Events
 open LeagueEventMonitor.Client.LeagueClient
 
-type ConsoleHandler (ctx: EventContext, light: Light) =
+type ConsoleHandler (ctx: EventContext, controller: LEDController) =
     inherit EventHandler (ctx)
     
     override self.on e =
@@ -16,13 +16,11 @@ type ConsoleHandler (ctx: EventContext, light: Light) =
             | v, _, _ when v = self.SummonerName ->
                 printfn "You died!! lol!!"
                 async {
-                    do! light.SetColorAsync(Color.Red) |> Async.AwaitTask
                     let! playerList = getPlayerList ()
                     match playerList with
                     | Some p -> 
                         let player = p |> Array.find (fun x -> x.SummonerName = self.SummonerName)
-                        do! Async.Sleep <| int (player.RespawnTimer * 1000M)
-                        do! light.SetColorAsync(Color.Green) |> Async.AwaitTask
+                        do! controller.death <| int (player.RespawnTimer * 1000M)
                     | None ->
                         printfn "Error: unable to get player respawn timer"
                 } |> Async.Start
@@ -39,6 +37,23 @@ type ConsoleHandler (ctx: EventContext, light: Light) =
             | _ -> false
         | GameStart _ ->
             printfn "GLHF!"
+            true
+        | BaronKill b ->
+            async {
+                if b.Stolen then
+                    do! controller.baronSteal ()
+                else
+                    do! controller.baronKill ()
+
+            } |> Async.Start
+            true
+        | DragonKill d ->
+            async {
+                if d.Stolen then
+                    do! controller.dragonSteal ()
+                else
+                    do! controller.dragonKill d.DragonType
+            } |> Async.Start
             true
         | _ ->
             printfn "Something else happened! (%A)" e

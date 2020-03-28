@@ -14,7 +14,7 @@ let printWelcome (allInfo: AllData) =
     printfn "Hello, %s! Welcome to League Tracker!" allInfo.ActivePlayer.SummonerName
 
 [<Literal>]
-let eventPollTimeoutMs = 500
+let eventPollTimeoutMs = 250
 
 [<Literal>]
 let readyPollTimeoutMs = 1000
