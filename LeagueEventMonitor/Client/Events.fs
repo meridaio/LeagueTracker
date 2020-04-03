@@ -85,6 +85,11 @@ type Ace = {
     AcingTeam: Team
 }
 
+type FirstBlood = {
+    Data: EventData
+    Recipient: string
+}
+
 type Event =
     | GameStart of GameStart
     | MinionsSpawning of MinionsSpawning
@@ -97,4 +102,5 @@ type Event =
     | ChampionKill of ChampionKill
     | Multikill of Multikill
     | Ace of Ace
+    | FirstBlood of FirstBlood
 

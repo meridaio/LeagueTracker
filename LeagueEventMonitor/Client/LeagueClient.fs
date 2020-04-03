@@ -103,6 +103,11 @@ let internal parseEvent (e: EventJson.Event) : Event =
                 | "CHAOS" -> Chaos
                 | _ -> failwithf "Unknown acing team %s" e.AcingTeam.Value
         }
+    | "FirstBlood" ->
+        FirstBlood {
+            Data = data
+            Recipient = e.Recipient.Value
+        }
     | unknown -> failwithf "Unknown event type %s" unknown
 
 type AllData = AllJson.Root

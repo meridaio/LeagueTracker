@@ -35,6 +35,7 @@ let getNextEventId (events: Event list) : int =
         | ChampionKill c -> c.Data.EventID
         | Multikill c -> c.Data.EventID
         | Ace c -> c.Data.EventID
+        | FirstBlood c -> c.Data.EventID
 
     match events with
     | [] -> 0
