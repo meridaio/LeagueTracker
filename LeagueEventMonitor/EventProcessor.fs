@@ -18,6 +18,7 @@ let processEvent (handler: EventHandler) (e: Event) : Async<unit> =
             | ChampionKill c -> handler.onChampionKill c
             | Multikill c -> handler.onMultikill c
             | Ace c -> handler.onAce c
+            | _ -> ()
     }
 
 let processEvents (handler: EventHandler) (events: Event list) : Async<unit> =
