@@ -1,6 +1,6 @@
 # League Tracker
 
-This program is a native application to track League of Legends data in real time (using the Live Client Data API) and provide notifications to other services. The goal of this project is to be the backbone for future realtime data applications, including an LED light controller and a GUI application to view live stats and track past game history.
+This program is a native application to track League of Legends data in real time (using the Live Client Data API) and update MagicHome LED applicances based on events that happen in game. For a list of supported events, see LeagueTracker/LEDController/Controller.fs
 
 ## License
     This program is free software: you can redistribute it and/or modify
