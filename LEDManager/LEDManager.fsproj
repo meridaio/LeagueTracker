@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Compile Include="Colors.fs" />
-    <Compile Include="LEDManager.fs" />
+    <Compile Include="LEDController.fs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,14 +2,21 @@
 open EventHandler
 open Config
 open ConsoleHandler
-open LEDManager
+open LEDController.Controller
+open System.Drawing
+open MagicHomeController.MagicHomeController
 
 let mkEventHandler controller ctx =
     ConsoleHandler (ctx, controller) :> EventHandler
 
 [<EntryPoint>]
 let main argv =
-    let config = loadConfig ()
-    let controller = connectToSingle config.ledIP
-    programLoop (mkEventHandler controller) |> Async.RunSynchronously
+    async {
+        let config = loadConfig ()
+        let! light = connectLight config.ledIP
+        if not light.IsOn then do! turnOn light
+        do! setColor light Color.Green
+        let controller = LEDController.Controller.LEDController light
+        do! programLoop (mkEventHandler controller)
+    } |> Async.RunSynchronously
     0

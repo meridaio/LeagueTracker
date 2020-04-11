@@ -108,6 +108,11 @@ let internal parseEvent (e: EventJson.Event) : Event =
             Data = data
             Recipient = e.Recipient.Value
         }
+    | "InhibRespawningSoon" ->
+        InhibRespawningSoon {
+            Data = data
+            InhibRespawningSoon = e.InhibRespawningSoon.Value
+        }
     | unknown -> failwithf "Unknown event type %s" unknown
 
 type AllData = AllJson.Root

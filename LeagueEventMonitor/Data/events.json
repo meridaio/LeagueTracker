@@ -128,6 +128,12 @@
       "EventName": "FirstBlood",
       "EventTime": 0.00000000000000001,
       "Recipient": "Merida"
+    },
+    {
+      "EventID": 0,
+      "EventName": "InhibRespawningSoon",
+      "EventTime": 0.00000000000000001,
+      "InhibRespawningSoon": "Barracks_T2_R1"
     }
   ]
 }

@@ -1,4 +1,4 @@
-﻿module LEDManager
+﻿module LEDController
 
 open System.Drawing
 open System.Threading

@@ -23,7 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LeagueEventMonitor\LeagueEventMonitor.fsproj" />
-    <ProjectReference Include="..\LEDManager\LEDManager.fsproj" />
+    <ProjectReference Include="..\LEDController\LEDController.fsproj" />
+    <ProjectReference Include="..\MagicHomeController\MagicHomeController.fsproj" />
   </ItemGroup>
 
 </Project>

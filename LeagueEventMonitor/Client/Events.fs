@@ -90,6 +90,11 @@ type FirstBlood = {
     Recipient: string
 }
 
+type InhibRespawningSoon = {
+    Data: EventData
+    InhibRespawningSoon: string
+}
+
 type Event =
     | GameStart of GameStart
     | MinionsSpawning of MinionsSpawning
@@ -103,4 +108,5 @@ type Event =
     | Multikill of Multikill
     | Ace of Ace
     | FirstBlood of FirstBlood
+    | InhibRespawningSoon of InhibRespawningSoon
 
