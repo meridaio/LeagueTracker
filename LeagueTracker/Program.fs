@@ -1,4 +1,6 @@
-﻿open EventMonitor
+﻿module LeagueTracker.Program
+
+open EventMonitor
 open EventHandler
 open Config
 open ConsoleHandler

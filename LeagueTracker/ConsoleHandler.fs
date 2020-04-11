@@ -1,4 +1,4 @@
-﻿module ConsoleHandler
+﻿module LeagueTracker.ConsoleHandler
 
 open System.Drawing
 open EventHandler
@@ -26,11 +26,11 @@ type ConsoleHandler (ctx: EventContext, controller: LEDController) =
                 } |> Async.Start
                 true
             | v, k, a when k = self.SummonerName && Seq.isEmpty a ->
-                controller.enqueueEvent <| Kill
+                controller.enqueueEvent Kill
                 printfn "You killed %s all by yourself!" v
                 true
             | v, k, a when k = self.SummonerName ->
-                controller.enqueueEvent <| Kill
+                controller.enqueueEvent Kill
                 printfn "You killed %s with some help from %s" v (String.concat ", " a)
                 true
             | v, k, a when a |> Seq.contains self.SummonerName ->

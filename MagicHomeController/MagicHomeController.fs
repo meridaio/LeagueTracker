@@ -30,6 +30,7 @@ let connectLight (ipAddress: string) : Async<Light> =
     async {
         let light = new Light(ipAddress)
         do! light.ConnectAsync() |> Async.AwaitTask
+        light.AutoRefreshEnabled <- true
         return light
     }
 

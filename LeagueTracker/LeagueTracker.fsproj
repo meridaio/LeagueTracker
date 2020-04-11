@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="LEDController\Controller.fs" />
     <Compile Include="Config.fs" />
     <Content Include="config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -23,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LeagueEventMonitor\LeagueEventMonitor.fsproj" />
-    <ProjectReference Include="..\LEDController\LEDController.fsproj" />
     <ProjectReference Include="..\MagicHomeController\MagicHomeController.fsproj" />
   </ItemGroup>
 

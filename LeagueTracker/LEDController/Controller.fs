@@ -1,9 +1,8 @@
-﻿module LEDController.Controller
+﻿module LeagueTracker.LEDController.Controller
 
 open System.Drawing
 open MagicHome
 open MagicHomeController.MagicHomeController
-open System.Collections.Concurrent
 
 type LEDEvent =
     | Die of timeoutMs: int
@@ -64,9 +63,6 @@ type LEDController (light: Light) =
             }
         loop ()
 
-    /// Takes in an event and updates LED state. If many events happen in a row,
-    /// this function will allow each event to play out its animation in full
-    /// (apart from deaths)
     member private this.reduce (event: LEDEvent) : Async<ReduceResult> =
         async {
             match event with

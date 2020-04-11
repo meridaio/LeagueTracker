@@ -1,4 +1,4 @@
-﻿module Config
+﻿module LeagueTracker.Config
 
 open System.IO
 open Newtonsoft.Json
