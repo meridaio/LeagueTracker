@@ -118,43 +118,43 @@ let internal parseEvent (e: EventJson.Event) : Event =
 type AllData = AllJson.Root
 
 /// Gets all live data for the current game -- should be called sparingly
-let getAllStats () : Async<AllData option> =
+let getAllStats () : Async<Result<AllData, _>> =
     async {
         try
             let req = RestRequest "liveclientdata/allgamedata"
             let! res = Async.AwaitTask <| client.ExecuteAsync req
             let content = res.Content
-            return AllJson.Parse content |> Some
+            return AllJson.Parse content |> Ok
         with
-        | _ -> return None
+        | e -> return Error e
     }
 
 /// Gets the current active summoner name
-let getPlayerName () : Async<string option> =
+let getPlayerName () : Async<Result<string, _>> =
     async {
         try
             let req = RestRequest "liveclientdata/activeplayername"
             let! res = Async.AwaitTask <| client.ExecuteAsync<string> req
-            return res.Data |> Some
+            return res.Data |> Ok
         with
-        | _ -> return None
+        | e -> return Error e
     }
 
 /// Given a summoner name, get their current score
-let getPlayerScore player : Async<Score option> =
+let getPlayerScore player : Async<Result<Score, _>> =
     async {
         try
             let req = RestRequest("liveclientdata/playerscores").AddQueryParameter("summonerName", player)
             let! res = Async.AwaitTask <| client.ExecuteAsync req
             return ScoreJson.Parse res.Content
             |> parseScore
-            |> Some
+            |> Ok
         with
-        | _ -> return None
+        | e -> return Error e
     }
 
 /// Gets all events with ID greater than or equal to the provdied ID
-let getNextEvents (id: int) : Async<Event list option> =
+let getNextEvents (id: int) : Async<Result<Event list, _>> =
     async {
         try
             let req = RestRequest("liveclientdata/eventdata").AddQueryParameter("eventID", id.ToString())
@@ -163,13 +163,13 @@ let getNextEvents (id: int) : Async<Event list option> =
                 (EventJson.Parse res.Content).Events
                 |> List.ofArray
                 |> List.map parseEvent
-                |> Some
+                |> Ok
         with
-        | _ -> return None
+        | e -> return Error e
     }
 
 /// Gets all events that have happened in game so far
-let getEvents () : Async<Event list option> =
+let getEvents () : Async<Result<Event list, _>> =
     async {
         try 
             let req = RestRequest "liveclientdata/eventdata"
@@ -178,20 +178,20 @@ let getEvents () : Async<Event list option> =
                 (EventJson.Parse res.Content).Events
                 |> List.ofArray
                 |> List.map parseEvent
-                |> Some
+                |> Ok
         with
-        | _ -> return None
+        | e -> return Error e
     }
 
-let getPlayerList () =
+let getPlayerList () : Async<Result<_,_>> =
     async {
         try
             let req = RestRequest "liveclientdata/playerlist"
             let! res = Async.AwaitTask <| client.ExecuteAsync req
             return
                 (PlayerListJson.Parse res.Content)
-                |> Some
+                |> Ok
         with
-        | _ -> return None
+        | e -> return Error e
     }
 

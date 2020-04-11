@@ -36,6 +36,7 @@ let getNextEventId (events: Event list) : int =
         | Multikill c -> c.Data.EventID
         | Ace c -> c.Data.EventID
         | FirstBlood c -> c.Data.EventID
+        | InhibRespawningSoon c -> c.Data.EventID
 
     match events with
     | [] -> 0
@@ -48,14 +49,15 @@ let loop (startingId: int) (callback: Event list -> Async<unit>) : Async<unit> =
             let! events = getNextEvents lastId
                 
             match events with
-            | Some [] ->
+            | Ok [] ->
                 do! Async.Sleep eventPollTimeoutMs
                 return! loop' lastId
-            | Some e ->
+            | Ok e ->
                 do! callback e
                 do! Async.Sleep eventPollTimeoutMs
                 return! loop' <| getNextEventId e
-            | _ ->
+            | Error e ->
+                printfn "Error getting events: %A" e
                 return ()
         }
     loop' startingId
@@ -66,7 +68,7 @@ let waitForApi () : Async<unit> =
         async {
             try
                 let! all = getAllStats ()
-                all |> Option.map (fun a -> a.ActivePlayer.SummonerName) |> ignore
+                all |> Result.map (fun a -> a.ActivePlayer.SummonerName) |> ignore
                 printfn "API ready!"
             with
             | _ ->
@@ -92,13 +94,13 @@ let waitForGame () : Async<unit> =
     waitForGame' ()
 
 let rec programLoop (mkHandler: EventContext -> EventHandler) =
-    monad {
+    async {
         do! waitForGame ()
         do! waitForApi ()
         let currentTime = DateTime.Now
         let! allInfo = getAllStats ()
         match allInfo with
-        | Some allInfo ->
+        | Ok allInfo ->
             let startTime = currentTime.AddSeconds(-(float allInfo.GameData.GameTime))
             printfn "Start time: %A" startTime
             printWelcome allInfo
@@ -107,9 +109,9 @@ let rec programLoop (mkHandler: EventContext -> EventHandler) =
             }
 
             let! events = getEvents ()
-            let nextEventId = events |> Option.map getNextEventId |> Option.defaultValue 0
+            let nextEventId = events |> Result.map getNextEventId |> function Ok x -> x | _ -> 0
             do! processEvents handler |> loop nextEventId
             return! programLoop mkHandler
-        | None ->
-            failwith "An error occurred getting stats, aborting"
+        | Error e ->
+            failwithf "An error occurred getting stats: %A" e
     }

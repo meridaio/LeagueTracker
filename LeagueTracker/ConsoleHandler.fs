@@ -18,11 +18,11 @@ type ConsoleHandler (ctx: EventContext, controller: LEDController) =
                 async {
                     let! playerList = getPlayerList ()
                     match playerList with
-                    | Some p -> 
+                    | Ok p -> 
                         let player = p |> Array.find (fun x -> x.SummonerName = self.SummonerName)
                         controller.enqueueEvent <| Die (int (player.RespawnTimer * 1000M))
-                    | None ->
-                        printfn "Error: unable to get player respawn timer"
+                    | Error e ->
+                        printfn "Error: unable to get player respawn timer: %A" e
                 } |> Async.Start
                 true
             | v, k, a when k = self.SummonerName && Seq.isEmpty a ->
