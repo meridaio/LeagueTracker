@@ -78,7 +78,7 @@ type LEDController (light: Light) =
                 return Noop
             | Kill ->
                 return CA {
-                    timeMs = 1000
+                    timeMs = 2000
                     action = C Color.Yellow
                 }
             | Assist ->

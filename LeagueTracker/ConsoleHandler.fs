@@ -3,7 +3,7 @@
 open LEDController.Controller
 open LeagueEventMonitor.Client.Events
 open LeagueEventMonitor.Client.LeagueClient
-open EventMonitor
+open LeagueEventMonitor.EventMonitor
 
 let handleEvents (controller: LEDController) (ctx: EventContext) (e: Event) =
     match e with

@@ -1,10 +1,8 @@
 ﻿module LeagueTracker.Program
 
-open EventMonitor
+open LeagueEventMonitor.EventMonitor
 open Config
 open ConsoleHandler
-open LEDController.Controller
-open System.Drawing
 open MagicHomeController.MagicHomeController
 
 [<EntryPoint>]

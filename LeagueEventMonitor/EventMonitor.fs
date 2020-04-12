@@ -1,4 +1,4 @@
-﻿module EventMonitor
+﻿module LeagueEventMonitor.EventMonitor
 
 open System
 
