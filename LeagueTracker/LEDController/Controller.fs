@@ -8,6 +8,7 @@ type LEDEvent =
     | Die of timeoutMs: int
     | Res
     | Kill
+    | Multi of num: int
     | Assist
     | EarthDrag
     | WaterDrag
@@ -78,8 +79,13 @@ type LEDController (light: Light) =
                 return Noop
             | Kill ->
                 return CA {
-                    timeMs = 2000
+                    timeMs = 1000
                     action = C Color.Yellow
+                }
+            | Multi num ->
+                return CA {
+                    timeMs = num * 1000
+                    action = P (Patterns.YellowStrobe, if num = 5 then 95 else 80)
                 }
             | Assist ->
                 return Noop

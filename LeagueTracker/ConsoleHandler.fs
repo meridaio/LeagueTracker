@@ -29,6 +29,9 @@ let handleEvents (controller: LEDController) (ctx: EventContext) (e: Event) =
         | v, k, a when a |> Seq.contains ctx.SummonerName ->
             printfn "You assisted %s killing %s" k v
         | _ -> ()
+    | Multikill k ->
+        if k.KillerName = ctx.SummonerName then
+            controller.enqueueEvent <| Multi k.KillStreak
     | GameStart _ ->
         printfn "GLHF!"
     | BaronKill b ->
