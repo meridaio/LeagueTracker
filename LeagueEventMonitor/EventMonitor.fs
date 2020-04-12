@@ -3,8 +3,6 @@
 open System
 
 open LeagueEventMonitor.Client.Events
-open EventProcessor
-open EventHandler
 open LeagueEventMonitor.Client.LeagueClient
 open System.Net.NetworkInformation
 open FSharpPlus
@@ -21,6 +19,23 @@ let readyPollTimeoutMs = 1000
 
 [<Literal>]
 let gamePollTimeoutMs = 5000
+
+type EventContext = {
+    SummonerName: string
+}
+
+type EventHandler = {
+    Handler: EventContext -> Event -> unit
+    OnStart: unit -> Async<unit>
+    OnEnd: unit -> Async<unit>
+}
+
+let processEvents (handler: Event -> unit) (events: Event list) : unit =
+    match events with
+    | [] -> ()
+    | _ ->
+        printfn "New events: %A" events
+        List.map handler events |> ignore
 
 let getNextEventId (events: Event list) : int =
     let getEventId = function
@@ -45,7 +60,7 @@ let getNextEventId (events: Event list) : int =
     | events -> events |> List.map (getEventId >> ((+) 1)) |> List.max
 
 
-let loop (startingId: int) (callback: Event list -> Async<unit>) : Async<unit> =
+let loop (startingId: int) (callback: Event list -> unit) : Async<unit> =
     let rec loop' (lastId: int) =
         async {
             let! events = getNextEvents lastId
@@ -55,7 +70,7 @@ let loop (startingId: int) (callback: Event list -> Async<unit>) : Async<unit> =
                 do! Async.Sleep eventPollTimeoutMs
                 return! loop' lastId
             | Ok e ->
-                do! callback e
+                callback e
                 do! Async.Sleep eventPollTimeoutMs
                 return! loop' <| getNextEventId e
             | Error e ->
@@ -79,15 +94,15 @@ let waitForApi () : Async<unit> =
         }
     waitForApi' ()
 
-let waitForGame () : Async<unit> =
+let gameIsRunning () =
+    IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners()
+    |> Array.exists (fun x -> x.Port = 2999)
+
+let waitForGameStart () : Async<unit> =
     printfn "Waiting for game to start..."
     let rec waitForGame' () =
         async {
-            let gameRunning =
-                IPGlobalProperties.GetIPGlobalProperties().GetActiveTcpListeners()
-                |> Array.exists (fun x -> x.Port = 2999)
-
-            if gameRunning then
+            if gameIsRunning () then
                 printfn "Game started!"
             else
                 do! Async.Sleep gamePollTimeoutMs
@@ -95,9 +110,18 @@ let waitForGame () : Async<unit> =
         }
     waitForGame' ()
 
-let rec programLoop (mkHandler: EventContext -> EventHandler) =
+let rec waitForGameShutdown () : Async<unit> =
     async {
-        do! waitForGame ()
+        if not <| gameIsRunning () then
+            printfn "Game ended!"
+        else
+            do! Async.Sleep gamePollTimeoutMs
+            return! waitForGameShutdown ()
+    }
+
+let rec programLoop (handler: EventHandler) =
+    async {
+        do! waitForGameStart ()
         do! waitForApi ()
         let currentTime = DateTime.Now
         let! allInfo = getAllStats ()
@@ -106,17 +130,18 @@ let rec programLoop (mkHandler: EventContext -> EventHandler) =
             let startTime = currentTime.AddSeconds(-(float allInfo.GameData.GameTime))
             printfn "Start time: %A" startTime
             printWelcome allInfo
-            let handler = mkHandler {
+            let handleEvent = handler.Handler {
                 SummonerName = allInfo.ActivePlayer.SummonerName
             }
 
             let! events = getEvents ()
             let nextEventId = events |> Result.map getNextEventId |> function Ok x -> x | _ -> 0
-            do! handler.start ()
-            do! processEvents handler |> loop nextEventId
-            do! handler.stop ()
-            return! programLoop mkHandler
+            do! handler.OnStart ()
+            do! processEvents handleEvent |> loop nextEventId
+            do! waitForGameShutdown ()
+            do! handler.OnEnd ()
+            return! programLoop handler
         | Error e ->
             printfn "An error occurred getting stats: %A" e
-            return! programLoop mkHandler
+            return! programLoop handler
     }

@@ -1,15 +1,11 @@
 ﻿module LeagueTracker.Program
 
 open EventMonitor
-open EventHandler
 open Config
 open ConsoleHandler
 open LEDController.Controller
 open System.Drawing
 open MagicHomeController.MagicHomeController
-
-let mkEventHandler controller ctx =
-    ConsoleHandler (ctx, controller) :> EventHandler
 
 [<EntryPoint>]
 let main argv =
@@ -17,6 +13,10 @@ let main argv =
         let config = loadConfig ()
         let! light = connectLight config.ledIP
         let controller = LEDController.Controller.LEDController light
-        do! programLoop (mkEventHandler controller)
+        do! programLoop {
+            Handler = handleEvents controller
+            OnStart = controller.start
+            OnEnd = controller.stop
+        }
     } |> Async.RunSynchronously
     0
