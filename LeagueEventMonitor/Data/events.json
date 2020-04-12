@@ -140,6 +140,12 @@
       "EventName": "InhibRespawned",
       "EventTime": 0.00000000000000001,
       "InhibRespawned": "Barracks_T2_R1"
+    },
+    {
+      "EventID": 0,
+      "EventName": "GameEnd",
+      "EventTime": 0.00000000000000001,
+      "Result": "Win"
     }
   ]
 }

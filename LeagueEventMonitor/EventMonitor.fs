@@ -38,6 +38,7 @@ let getNextEventId (events: Event list) : int =
         | FirstBlood c -> c.Data.EventID
         | InhibRespawningSoon c -> c.Data.EventID
         | InhibRespawned c -> c.Data.EventID
+        | GameEnd c -> c.Data.EventID
 
     match events with
     | [] -> 0

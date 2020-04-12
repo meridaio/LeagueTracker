@@ -1,6 +1,5 @@
 ﻿module LeagueTracker.ConsoleHandler
 
-open System.Drawing
 open EventHandler
 open LEDController.Controller
 open LeagueEventMonitor.Client.Events
@@ -57,6 +56,9 @@ type ConsoleHandler (ctx: EventContext, controller: LEDController) =
                 | Water -> WaterDrag
                 | Fire -> FireDrag
                 | Elder -> ElderDrag
+            true
+        | GameEnd g ->
+            printfn "Game ended: %A" g.Result
             true
         | _ ->
             printfn "Something else happened! (%A)" e

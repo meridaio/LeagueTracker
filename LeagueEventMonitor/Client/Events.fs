@@ -100,6 +100,15 @@ type InhibRespawned = {
     InhibRespawned: string
 }
 
+type Outcome =
+    | Win
+    | Loss
+
+type GameEnd = {
+    Data: EventData
+    Result: Outcome
+}
+
 type Event =
     | GameStart of GameStart
     | MinionsSpawning of MinionsSpawning
@@ -115,4 +124,5 @@ type Event =
     | FirstBlood of FirstBlood
     | InhibRespawningSoon of InhibRespawningSoon
     | InhibRespawned of InhibRespawned
+    | GameEnd of GameEnd
 

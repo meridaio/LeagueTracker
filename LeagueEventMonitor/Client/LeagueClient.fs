@@ -119,6 +119,11 @@ let internal parseEvent (e: EventJson.Event) : Event =
             Data = data
             InhibRespawned = e.InhibRespawned.Value
         }
+    | "GameEnd" ->
+        GameEnd {
+            Data = data
+            Result = match e.Result.Value with "Win" -> Win | _ -> Loss
+        }
     | unknown -> failwithf "Unknown event type %s" unknown
 
 type AllData = AllJson.Root

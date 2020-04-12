@@ -21,6 +21,7 @@ let processEvent (handler: EventHandler) (e: Event) : Async<unit> =
             | FirstBlood _ -> ()
             | InhibRespawningSoon _ -> ()
             | InhibRespawned _ -> ()
+            | GameEnd c -> handler.onGameEnd c
     }
 
 let processEvents (handler: EventHandler) (events: Event list) : Async<unit> =
