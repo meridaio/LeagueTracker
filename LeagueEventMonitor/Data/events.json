@@ -134,6 +134,12 @@
       "EventName": "InhibRespawningSoon",
       "EventTime": 0.00000000000000001,
       "InhibRespawningSoon": "Barracks_T2_R1"
+    },
+    {
+      "EventID": 0,
+      "EventName": "InhibRespawned",
+      "EventTime": 0.00000000000000001,
+      "InhibRespawned": "Barracks_T2_R1"
     }
   ]
 }

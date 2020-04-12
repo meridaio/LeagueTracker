@@ -1,5 +1,6 @@
 ﻿module LeagueEventMonitor.Client.LeagueClient
 
+open System
 open System.Net.Security
 open LeagueEventMonitor.Client.Events
 open LeagueEventMonitor.Client.JsonTypes
@@ -113,6 +114,11 @@ let internal parseEvent (e: EventJson.Event) : Event =
             Data = data
             InhibRespawningSoon = e.InhibRespawningSoon.Value
         }
+    | "InhibRespawned" ->
+        InhibRespawned {
+            Data = data
+            InhibRespawned = e.InhibRespawned.Value
+        }
     | unknown -> failwithf "Unknown event type %s" unknown
 
 type AllData = AllJson.Root
@@ -123,8 +129,11 @@ let getAllStats () : Async<Result<AllData, _>> =
         try
             let req = RestRequest "liveclientdata/allgamedata"
             let! res = Async.AwaitTask <| client.ExecuteAsync req
-            let content = res.Content
-            return AllJson.Parse content |> Ok
+            let content = AllJson.Parse res.Content
+            if String.IsNullOrEmpty content.ActivePlayer.SummonerName then
+                return Error <| exn "Summoner name empty"
+            else
+                return Ok content
         with
         | e -> return Error e
     }

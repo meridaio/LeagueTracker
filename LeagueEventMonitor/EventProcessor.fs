@@ -20,6 +20,7 @@ let processEvent (handler: EventHandler) (e: Event) : Async<unit> =
             | Ace c -> handler.onAce c
             | FirstBlood _ -> ()
             | InhibRespawningSoon _ -> ()
+            | InhibRespawned _ -> ()
     }
 
 let processEvents (handler: EventHandler) (events: Event list) : Async<unit> =

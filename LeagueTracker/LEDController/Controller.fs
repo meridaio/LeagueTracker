@@ -123,3 +123,15 @@ type LEDController (light: Light) =
 
     member this.enqueueEvent (e: LEDEvent) =
         this.message.Post e
+
+    member __.start () =
+        async {
+            if not light.IsOn then do! turnOn light
+            do! setColor light Color.Green
+        }
+
+    member __.stop () =
+        async {
+            do! restore light
+        }
+

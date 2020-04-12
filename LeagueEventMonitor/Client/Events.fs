@@ -95,6 +95,11 @@ type InhibRespawningSoon = {
     InhibRespawningSoon: string
 }
 
+type InhibRespawned = {
+    Data: EventData
+    InhibRespawned: string
+}
+
 type Event =
     | GameStart of GameStart
     | MinionsSpawning of MinionsSpawning
@@ -109,4 +114,5 @@ type Event =
     | Ace of Ace
     | FirstBlood of FirstBlood
     | InhibRespawningSoon of InhibRespawningSoon
+    | InhibRespawned of InhibRespawned
 

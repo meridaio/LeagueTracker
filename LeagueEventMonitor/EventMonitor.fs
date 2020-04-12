@@ -37,6 +37,7 @@ let getNextEventId (events: Event list) : int =
         | Ace c -> c.Data.EventID
         | FirstBlood c -> c.Data.EventID
         | InhibRespawningSoon c -> c.Data.EventID
+        | InhibRespawned c -> c.Data.EventID
 
     match events with
     | [] -> 0
@@ -110,8 +111,11 @@ let rec programLoop (mkHandler: EventContext -> EventHandler) =
 
             let! events = getEvents ()
             let nextEventId = events |> Result.map getNextEventId |> function Ok x -> x | _ -> 0
+            do! handler.start ()
             do! processEvents handler |> loop nextEventId
+            do! handler.stop ()
             return! programLoop mkHandler
         | Error e ->
-            failwithf "An error occurred getting stats: %A" e
+            printfn "An error occurred getting stats: %A" e
+            return! programLoop mkHandler
     }

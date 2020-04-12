@@ -10,8 +10,11 @@ type EventContext = {
 type EventHandler (ctx: EventContext) =
     member __.SummonerName = ctx.SummonerName
 
+    abstract member start : unit -> Async<unit>
+    abstract member stop : unit -> Async<unit>
     abstract member on : Event -> bool
     abstract member onGameStart : GameStart -> unit
+    abstract member onGameEnd : unit -> unit
     abstract member onMinionsSpawning : MinionsSpawning -> unit
     abstract member onFirstBrick : FirstBrick -> unit
     abstract member onTurretKilled : TurretKilled -> unit
@@ -23,8 +26,11 @@ type EventHandler (ctx: EventContext) =
     abstract member onMultikill : Multikill -> unit
     abstract member onAce : Ace -> unit
 
+    default __.start () = async { () }
+    default __.stop () = async { () }
     default __.on _ = false
     default __.onGameStart _ = ()
+    default __.onGameEnd () = ()
     default __.onMinionsSpawning _ = ()
     default __.onFirstBrick _ = ()
     default __.onTurretKilled _ = ()

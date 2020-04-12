@@ -8,6 +8,12 @@ open LeagueEventMonitor.Client.LeagueClient
 
 type ConsoleHandler (ctx: EventContext, controller: LEDController) =
     inherit EventHandler (ctx)
+
+    override __.start () =
+        controller.start ()
+
+    override __.stop () =
+        controller.stop ()
     
     override self.on e =
         match e with
