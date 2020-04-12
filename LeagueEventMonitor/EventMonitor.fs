@@ -69,7 +69,7 @@ let waitForApi () : Async<unit> =
         async {
             try
                 let! all = getAllStats ()
-                all |> Result.map (fun a -> a.ActivePlayer.SummonerName) |> ignore
+                all |> Result.map (fun a -> a.ActivePlayer.SummonerName) |> function Ok _ -> () | Error e -> raise e
                 printfn "API ready!"
             with
             | _ ->
