@@ -1,4 +1,4 @@
-﻿module LeagueEventMonitor.Client.Events
+﻿module LeagueTracker.EventMonitor.Client.Events
 
 type EventData = {
     EventID: int

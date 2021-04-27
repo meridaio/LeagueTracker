@@ -1,9 +1,9 @@
 ﻿module LeagueTracker.ConsoleHandler
 
 open LEDController.Controller
-open LeagueEventMonitor.Client.Events
-open LeagueEventMonitor.Client.LeagueClient
-open LeagueEventMonitor.EventMonitor
+open LeagueTracker.EventMonitor.Client.Events
+open LeagueTracker.EventMonitor.Client.LeagueClient
+open LeagueTracker.EventMonitor.EventMonitor
 
 let handleEvents (controller: LEDController) (ctx: EventContext) (e: Event) =
     match e with

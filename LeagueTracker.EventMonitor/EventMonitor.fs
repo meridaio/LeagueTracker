@@ -1,9 +1,9 @@
-﻿module LeagueEventMonitor.EventMonitor
+﻿module LeagueTracker.EventMonitor.EventMonitor
 
 open System
 
-open LeagueEventMonitor.Client.Events
-open LeagueEventMonitor.Client.LeagueClient
+open LeagueTracker.EventMonitor.Client.Events
+open LeagueTracker.EventMonitor.Client.LeagueClient
 open System.Net.NetworkInformation
 open FSharpPlus
 open FSharpPlus.Data

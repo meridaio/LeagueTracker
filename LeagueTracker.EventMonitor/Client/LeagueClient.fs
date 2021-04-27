@@ -1,9 +1,9 @@
-﻿module LeagueEventMonitor.Client.LeagueClient
+﻿module LeagueTracker.EventMonitor.Client.LeagueClient
 
 open System
 open System.Net.Security
-open LeagueEventMonitor.Client.Events
-open LeagueEventMonitor.Client.JsonTypes
+open LeagueTracker.EventMonitor.Client.Events
+open LeagueTracker.EventMonitor.Client.JsonTypes
 open RestSharp
 open Score
 

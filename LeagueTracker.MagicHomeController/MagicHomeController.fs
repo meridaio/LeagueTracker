@@ -1,4 +1,4 @@
-﻿module MagicHomeController.MagicHomeController
+﻿module LeagueTracker.MagicHomeController
 
 open MagicHome
 open System.Drawing

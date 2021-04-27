@@ -1,4 +1,4 @@
-﻿module internal LeagueEventMonitor.Client.JsonTypes
+﻿module internal LeagueTracker.EventMonitor.Client.JsonTypes
 
 open FSharp.Data
 

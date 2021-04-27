@@ -2,7 +2,7 @@
 
 open System.Drawing
 open MagicHome
-open MagicHomeController.MagicHomeController
+open LeagueTracker.MagicHomeController
 
 type LEDEvent =
     | Die of timeoutMs: int

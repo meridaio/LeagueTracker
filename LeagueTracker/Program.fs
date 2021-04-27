@@ -1,9 +1,9 @@
 ﻿module LeagueTracker.Program
 
-open LeagueEventMonitor.EventMonitor
+open LeagueTracker.EventMonitor.EventMonitor
 open Config
 open ConsoleHandler
-open MagicHomeController.MagicHomeController
+open LeagueTracker.MagicHomeController
 
 [<EntryPoint>]
 let main argv =

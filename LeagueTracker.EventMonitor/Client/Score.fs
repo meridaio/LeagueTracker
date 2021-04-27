@@ -1,4 +1,4 @@
-﻿module LeagueEventMonitor.Client.Score
+﻿module LeagueTracker.EventMonitor.Client.Score
 
 type Score = {
     Assists: int
