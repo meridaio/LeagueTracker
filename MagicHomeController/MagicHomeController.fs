@@ -57,11 +57,11 @@ let setRgb (light: Light) (r: byte) (g: byte) (b: byte) : Async<unit> =
     light.SetColorAsync(r, g, b) |> Async.AwaitTask
 
 /// Turns the light off
-let turnOff (light: Light) : Async<unit> =
+let turnOff light =
     setPower light false
 
 /// Turns the light on
-let turnOn (light: Light) : Async<unit> =
+let turnOn light =
     setPower light true
 
 /// Restores the light to the state it was in when first connected

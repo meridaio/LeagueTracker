@@ -19,3 +19,5 @@ _[Dd]eploy/
 
 **/*.fsproj.user
 PublishProfiles/
+.fake
+.ionide
